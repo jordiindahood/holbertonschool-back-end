@@ -7,7 +7,7 @@ import requests
 import sys
 
 
-def GET_REQUESTS(ID):
+def GET_DATA_BY_ID(ID):
     """
     This function gets data
     """
@@ -18,16 +18,17 @@ def GET_REQUESTS(ID):
         f"https://jsonplaceholder.\
 typicode.com/users/{ID}"
     ).json()
+
     completed_tasks = [task["title"] for task in todos if task["completed"]]
     print(
         f"Employee {user_info['name']} is done with tasks\
 ({len(completed_tasks)}/{len(todos)}):"
     )
     for task in completed_tasks:
-        print("\t {}".format(task))
+        print(f"\t {task}")
 
 
 if __name__ == "__main__":
+    """get the user id from command-line arguments"""
     ID = sys.argv[1]
-
-    GET_REQUESTS(ID)
+    GET_DATA_BY_ID(ID)
