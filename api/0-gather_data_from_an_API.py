@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script will use the REST API to return information
-about a given employee's TODO list progress.
+a Python script that, using this REST API, for a given employee ID,
+returns information about his/her TODO list progress.
 """
 import requests
 import sys
@@ -9,8 +9,7 @@ import sys
 
 def GET_REQUESTS(ID):
     """
-    This functionis the same as the previous one but with a different
-    way to get the data using requests
+    This function gets data
     """
     todos = requests.get(
         f"https://jsonplaceholder.typicode.com/todos?userId={ID}"
