@@ -28,14 +28,14 @@ typicode.com/users/{ID}"
             {
                 "task": task["title"],
                 "completed": task["completed"],
-                "username": user["username"],
+                "username": user["username"]
             }
             for task in data
         ]
     }
     json_object = json.dumps(formatted_data)
-    
-    #saving data in JSON file
+
+    # saving data in JSON file
     with open(f"{ID}.json", mode="w") as json_file:
         json_file.write(json_object)
 
